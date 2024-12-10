@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2d24dd1d893d3f4479c6850c29863483
+guid: 877ab3400c282f34a97e574f1c42b55b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2557577761740286743
-    second: EmptyLayer_0
+      213: 7228427573584015795
+    second: CloseButton_0
+  - first:
+      213: 5512020918586152584
+    second: CloseButton_1
+  - first:
+      213: 756003826192432351
+    second: CloseButton_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,12 +132,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EmptyLayer_0
+      name: CloseButton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 23
-        width: 128
+        x: 4
+        y: 28
+        width: 130
         height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71be7f57c675e7320800000000000000
-      internalID: 2557577761740286743
+      spriteID: 3b13d109498805460800000000000000
+      internalID: 7228427573584015795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseButton_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 28
+        width: 130
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88699de42d1ae7c40800000000000000
+      internalID: 5512020918586152584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseButton_2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 28
+        width: 130
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc3905797ddd7a00800000000000000
+      internalID: 756003826192432351
       vertices: []
       indices: 
       edges: []
@@ -161,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EmptyLayer_0: 2557577761740286743
+      CloseButton_0: 7228427573584015795
+      CloseButton_1: 5512020918586152584
+      CloseButton_2: 756003826192432351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
