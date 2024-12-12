@@ -2,10 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GuıController : MonoBehaviour
 {
     [SerializeField] private string SceneName;
+    [Space]
     [SerializeField] private GameObject PlayButtonObject;
     [SerializeField] private GameObject OptionsButtonObject;
     [SerializeField] private GameObject ExitButtonObject;
@@ -13,10 +15,16 @@ public class GuıController : MonoBehaviour
     [SerializeField] private GameObject ApplyButtonObject;
     [SerializeField] private GameObject ResLeftButtonObject;
     [SerializeField] private GameObject ResRightButtonObject;
+    [Space]
     [SerializeField] private GameObject OptionsCanvas;
     [Space]
     [SerializeField] private Toggle fullscreenToggle;
     [SerializeField] private Toggle vsyncToggle;
+    [Space]
+    [SerializeField] private AudioMixer Mixer;
+    [SerializeField] private Slider MasterVolumeSlider;
+    [SerializeField] private Slider MusicVolumeSlider;
+    [SerializeField] private Slider SFXVolumeSlider;
     [Space]
     [SerializeField] private TMP_Text resolutionsText;
     [SerializeField] private ResItem[] resolutions;
@@ -91,6 +99,10 @@ public class GuıController : MonoBehaviour
     public void UpdateResolutionText()
     {
         resolutionsText.text = resolutions[selectedResolutions].Horizontal.ToString() + " X " +  resolutions[selectedResolutions].Vertical.ToString();
+    }
+    public void MusicVolumeSet()
+    {
+        Mixer.SetFloat("MusicVol", MusicVolumeSlider.value);
     }
 }
 [System.Serializable]
