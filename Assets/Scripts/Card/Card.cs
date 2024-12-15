@@ -23,12 +23,12 @@ public class Card : MonoBehaviour
     public TMP_Text cardLoreText;
     public Image characterImage;
 
-    public Vector3 targetPoint;
-    public Quaternion targetRotation;
+    [HideInInspector] public Vector3 targetPoint;
+    [HideInInspector] public Quaternion targetRotation;
     public float moveSpeed;
     public float rotationSpeed;
 
-    public bool isHand;
+    [HideInInspector] public bool isHand;
     public int handPosition;
 
     private HandController handController;
@@ -36,6 +36,10 @@ public class Card : MonoBehaviour
     private bool isSelected;
     private Collider2D theCollider;
     public LayerMask desktopLayer;
+    public LayerMask placementLayer; 
+
+    private bool justPressed;
+    [HideInInspector] public CardPlacePoint assignedPlace;
     void Start()
     {
         cardInfo();
@@ -49,20 +53,61 @@ public class Card : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation,targetRotation, rotationSpeed * Time.deltaTime);
 
-        if(isSelected)
+        if (isSelected)
         {
             Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(worldMousePosition,Vector2.zero,100f,desktopLayer);
-            if(hit)
+            RaycastHit2D desktopHit = Physics2D.Raycast(worldMousePosition, Vector2.zero, 100f, desktopLayer);
+            if (desktopHit)
             {
-                MoveToPoint(hit.point, Quaternion.identity);
+                MoveToPoint(desktopHit.point, Quaternion.identity);
+            }
+
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                ReturnToHand();
+            }
+            if (Input.GetMouseButtonDown(0) && justPressed == false)
+            {
+                RaycastHit2D placementHit = Physics2D.Raycast(worldMousePosition, Vector2.zero, 100f, placementLayer);
+                if (placementHit)
+                {
+                    CardPlacePoint selectedPoint = placementHit.collider.GetComponent<CardPlacePoint>();
+
+                    if (selectedPoint.activeCard == null && selectedPoint.isPlayerPoint)
+                    {
+                        if (BattleController.instance.playerMana >= manaCost)
+                        {
+                            selectedPoint.activeCard = this;
+                            assignedPlace = selectedPoint;
+
+                            MoveToPoint(selectedPoint.transform.position, Quaternion.identity);
+
+                            isHand = false;
+                            isSelected = false;
+
+                            handController.RemoveCardFromHand(this);
+                            BattleController.instance.SpendPlayerMana(manaCost);
+                        }
+                        else
+                        {
+                            ReturnToHand();
+
+                            UiController.instance.ShowManaWarning();
+                        }
+                    }
+                    else
+                    {
+                        ReturnToHand();
+                    }
+                }
+                else
+                {
+                    ReturnToHand();
+                }
             }
         }
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            ReturnToHand();
-        }
+        justPressed = false;
     }
 
     public void cardInfo()
@@ -110,6 +155,8 @@ public class Card : MonoBehaviour
         {
             isSelected = true;
             theCollider.enabled = false;
+
+            justPressed = true;
         }
     }
     public void ReturnToHand()

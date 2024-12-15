@@ -32,13 +32,24 @@ public class HandController : MonoBehaviour
         for(int i = 0;i < heldCards.Count;i++)
         {
             cardPositions.Add(minPos.position + (distanceBetweenPoints * i));
-
-            //heldCards[i].transform.position = cardPositions[i];
-            //heldCards[i].transform.rotation = minPos.rotation;
+            
             heldCards[i].MoveToPoint(cardPositions[i],minPos.rotation);
 
             heldCards[i].isHand = true;
             heldCards[i].handPosition = i;
         }
+    }
+
+    public void RemoveCardFromHand(Card cardToRemove)
+    {
+        if(heldCards[cardToRemove.handPosition] == cardToRemove)
+        {
+            heldCards.RemoveAt(cardToRemove.handPosition);
+        }
+        else
+        {
+            Debug.LogError("ERROR");
+        }
+        SetCardPositionInHands();
     }
 }
