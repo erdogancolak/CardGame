@@ -10,9 +10,13 @@ public class UiController : MonoBehaviour
     public GameObject manaWarning;
     public float manaWarningTime;
     private float manaWarningCounter;
-    void Start()
+    private void Awake()
     {
         instance = this;
+    }
+    void Start()
+    {
+        
     }
 
     void Update()

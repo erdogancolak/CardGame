@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
+    public static HandController instance;
+
     public List<Card> heldCards = new List<Card>();
 
     public Transform minPos;
     public Transform maxPos;
 
-    public List<Vector3> cardPositions = new List<Vector3>();   
+    public List<Vector3> cardPositions = new List<Vector3>();
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         SetCardPositionInHands();
@@ -39,17 +45,25 @@ public class HandController : MonoBehaviour
             heldCards[i].handPosition = i;
         }
     }
-
     public void RemoveCardFromHand(Card cardToRemove)
     {
-        if(heldCards[cardToRemove.handPosition] == cardToRemove)
+        if (heldCards.Contains(cardToRemove))
         {
-            heldCards.RemoveAt(cardToRemove.handPosition);
+            int removedCardPosition = cardToRemove.handPosition;
+
+            heldCards.Remove(cardToRemove);
+
+            SetCardPositionInHands();
+
+            for (int i = removedCardPosition; i < heldCards.Count; i++)
+            {
+                heldCards[i].handPosition = i;
+            }
         }
-        else
-        {
-            Debug.LogError("ERROR");
-        }
+    }
+    public void AddToCardToHand(Card AddToCard)
+    {
+        heldCards.Add(AddToCard);
         SetCardPositionInHands();
     }
 }

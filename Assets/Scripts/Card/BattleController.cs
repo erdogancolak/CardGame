@@ -4,16 +4,20 @@ public class BattleController : MonoBehaviour
 {
     public static BattleController instance;
 
-    public int startingMana;
+    [HideInInspector] public int startingMana;
     public int maxMana;
     [HideInInspector] public int playerMana;
+    public int minStartingMana;
+    public int maxStartingMana;
     private void Awake()
     {
         instance = this;
-        playerMana = startingMana;
     }
     void Start()
     {
+        startingMana = Random.Range(minStartingMana,maxStartingMana);
+        playerMana = startingMana;
+
         UiController.instance.SetPlayerManaText(startingMana);
     }
 

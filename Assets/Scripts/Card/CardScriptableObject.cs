@@ -10,4 +10,5 @@ public class CardScriptableObject : ScriptableObject
     public string cardDescription;
     public string cardLore;
     public Sprite cardSprite;
+    public Sprite backgroundSprite;
 }
