@@ -551,12 +551,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   assignedPlace: {fileID: 0}
-  cardPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!61 &7449900986335198918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1155,7 +1149,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10

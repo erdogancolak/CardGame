@@ -27,6 +27,8 @@ public class Card : MonoBehaviour
     public Image characterImage;
     public Image backgroundImage;
 
+    public bool isPlayer;
+
     [HideInInspector] public Vector3 targetPoint;
     [HideInInspector] public Quaternion targetRotation;
     public float moveSpeed;
@@ -98,21 +100,21 @@ public class Card : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (isHand)
+        if (isHand && isPlayer)
         {
             MoveToPoint(handController.cardPositions[handPosition] + new Vector3(0,.3f,0),Quaternion.identity);
         }
     }
     private void OnMouseExit()
     {
-        if (isHand)
+        if (isHand && isPlayer)
         {
             MoveToPoint(handController.cardPositions[handPosition], handController.minPos.rotation);
         }
     }
     private void OnMouseDown()
     {
-        if (isHand)
+        if (isHand && BattleController.instance.currentOrder == BattleController.TurnOrder.playerActive && isPlayer)
         {
             isSelected = true;
             theCollider.enabled = false;
@@ -145,7 +147,7 @@ public class Card : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && justPressed == false)
         {
             RaycastHit2D placementHit = Physics2D.Raycast(worldMousePosition, Vector2.zero, 100f, placementLayer);
-            if (placementHit)
+            if (placementHit && BattleController.instance.currentOrder == BattleController.TurnOrder.playerActive)
             {
                 CardPlacePoint selectedPoint = placementHit.collider.GetComponent<CardPlacePoint>();
                 CardPlacePoint bestFrame = FindBestFrame();

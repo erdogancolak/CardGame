@@ -10,6 +10,11 @@ public class UiController : MonoBehaviour
     public GameObject manaWarning;
     public float manaWarningTime;
     private float manaWarningCounter;
+
+    public int drawManaCost;
+    public GameObject drawCardButton;
+
+    public GameObject endTurnButton;
     private void Awake()
     {
         instance = this;
@@ -40,5 +45,27 @@ public class UiController : MonoBehaviour
     {
         manaWarning.SetActive(true);
         manaWarningCounter = manaWarningTime;
+    }
+
+    public void DrawCard()
+    {
+        if(BattleController.instance.playerMana >= drawManaCost)
+        {
+            DeckController.instance.DrawCardToHand();
+            BattleController.instance.SpendPlayerMana(drawManaCost);
+        }
+        else
+        {
+            ShowManaWarning();
+            drawCardButton.SetActive(false);
+        }
+    }
+
+    public void EndTurn()
+    {
+        endTurnButton.SetActive(false);
+        drawCardButton.SetActive(false);
+
+        BattleController.instance.AdvanceTurn();
     }
 }

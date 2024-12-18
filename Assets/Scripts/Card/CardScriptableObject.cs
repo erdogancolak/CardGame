@@ -7,8 +7,8 @@ public class CardScriptableObject : ScriptableObject
     public int health;
     public string cardName;
     public string cardType;
-    public string cardDescription;
-    public string cardLore;
+    [TextArea] public string cardDescription;
+    [TextArea] public string cardLore;
     public Sprite cardSprite;
     public Sprite backgroundSprite;
 }

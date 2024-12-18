@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,7 @@ public class DeckController : MonoBehaviour
 
     public List<CardScriptableObject> deckToUse = new List<CardScriptableObject>();
     public List<CardScriptableObject> activeCards = new List<CardScriptableObject>();
-
-    public int startCardCount;
+    
     public Card cardToSpawn;
 
     private void Awake()
@@ -18,10 +18,6 @@ public class DeckController : MonoBehaviour
     void Start()
     {
         SetupDeck();
-        for(int i = 0 ; i < startCardCount ; i++)
-        {
-            DrawCardToHand();
-        }
     }
 
     void Update()
@@ -59,5 +55,18 @@ public class DeckController : MonoBehaviour
         activeCards.RemoveAt(0);
 
         HandController.instance.AddToCardToHand(newCard);
+    }
+
+    public void StartCardDraw(int startCardCount, float betweenCardDraw)
+    {
+        StartCoroutine(StartCardDrawIE(startCardCount, betweenCardDraw));
+    }
+    public IEnumerator StartCardDrawIE(int startCardCount, float betweenCardDraw)
+    {
+        for (int i = 0; i < startCardCount; i++)
+        {
+            DrawCardToHand();
+            yield return new WaitForSeconds(betweenCardDraw);
+        }
     }
 }
