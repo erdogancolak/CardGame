@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2497749920898057836}
+  - {fileID: 1419477994406050863}
   m_Father: {fileID: 8376845085241424609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223428964473553888
@@ -485,6 +486,7 @@ GameObject:
   - component: {fileID: 8376845085241424609}
   - component: {fileID: 8405660435752290043}
   - component: {fileID: 7449900986335198918}
+  - component: {fileID: 181812769819639906}
   m_Layer: 0
   m_Name: 'Card '
   m_TagString: Untagged
@@ -506,7 +508,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8599752676828025884}
-  - {fileID: 1419477994406050863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8405660435752290043
@@ -538,6 +539,7 @@ MonoBehaviour:
   cardLoreText: {fileID: 333587140250370925}
   characterImage: {fileID: 8110445956896110507}
   backgroundImage: {fileID: 5746418296273823836}
+  isPlayer: 1
   targetPoint: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
   moveSpeed: 5
@@ -597,6 +599,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 3.5}
   m_EdgeRadius: 0
+--- !u!95 &181812769819639906
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897828574183594086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 299c9e63f21cb304e85bb30300b7e3eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4932067528848731394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1148,7 @@ RectTransform:
   - {fileID: 6225071770159711281}
   - {fileID: 4160446096468011543}
   - {fileID: 703024221602023152}
-  m_Father: {fileID: 8376845085241424609}
+  m_Father: {fileID: 8599752676828025884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1149,7 +1173,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10

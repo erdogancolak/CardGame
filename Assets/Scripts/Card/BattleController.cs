@@ -13,6 +13,8 @@ public class BattleController : MonoBehaviour
 
     public int startCardCount;
     public float betweenCardDraw;
+
+    public int drawCardPerRound;
     public enum TurnOrder { playerActive, playerCardAttack,enemyActive,enemyCardAttack}
     public TurnOrder currentOrder;
     private void Awake()
@@ -57,10 +59,17 @@ public class BattleController : MonoBehaviour
         switch (currentOrder)
         {
             case TurnOrder.playerActive:
+
                 fillPlayerMana();
+
+                DeckController.instance.DrawCardPerRound(drawCardPerRound);
+
                 break;
 
             case TurnOrder.playerCardAttack:
+
+                CardPointsController.instance.PlayerAttack();
+
                 break;
 
             case TurnOrder.enemyActive:
@@ -78,5 +87,8 @@ public class BattleController : MonoBehaviour
         playerMana = startingMana;
 
         UiController.instance.SetPlayerManaText(startingMana);
+
+        UiController.instance.endTurnButton.SetActive(true);
+        UiController.instance.drawCardButton.SetActive(true);
     }
 }

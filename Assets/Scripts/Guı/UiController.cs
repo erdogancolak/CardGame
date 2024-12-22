@@ -53,11 +53,10 @@ public class UiController : MonoBehaviour
         {
             DeckController.instance.DrawCardToHand();
             BattleController.instance.SpendPlayerMana(drawManaCost);
-        }
-        else
-        {
-            ShowManaWarning();
-            drawCardButton.SetActive(false);
+            if(BattleController.instance.playerMana < 2)
+            {
+                drawCardButton.SetActive(false);
+            }
         }
     }
 

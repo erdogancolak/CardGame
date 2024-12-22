@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 public class Card : MonoBehaviour
 {
     public CardScriptableObject cardSO;
@@ -26,6 +27,8 @@ public class Card : MonoBehaviour
     public TMP_Text cardLoreText;
     public Image characterImage;
     public Image backgroundImage;
+
+    public Animator animator;
 
     public bool isPlayer;
 
@@ -49,8 +52,15 @@ public class Card : MonoBehaviour
 
     private List<CardPlacePoint> allFrames;
 
+
     void Start()
     {
+        if(targetPoint == Vector3.zero)
+        {
+            targetPoint = transform.position;
+            targetRotation = transform.rotation;
+        }
+        animator = GetComponent<Animator>();
         cardInfo();
 
         handController = FindAnyObjectByType<HandController>();
@@ -62,7 +72,6 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        cardInfo();
         transform.position = Vector3.Lerp(transform.position, targetPoint, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation,targetRotation, rotationSpeed * Time.deltaTime);
 
@@ -82,9 +91,8 @@ public class Card : MonoBehaviour
         cardDescription = cardSO.cardDescription;
         cardLore = cardSO.cardLore;
 
-        manaCostText.text = manaCost.ToString();
-        attackPowerText.text = attackPower.ToString();
-        healthText.text = health.ToString();
+        UpdateCardDisplay();
+
         cardNameText.text = cardName.ToString();
         cardTypeText.text = cardType.ToString();
         cardDescriptionText.text = cardDescription.ToString();
@@ -210,5 +218,26 @@ public class Card : MonoBehaviour
         isSelected = false;
 
         handController.RemoveCardFromHand(this);
+    }
+
+    public void GetDamage(int damageAmount)
+    {
+        health -= damageAmount;
+
+        if(health <= 0)
+        {
+            health = 0;
+
+            Destroy(gameObject);
+        }
+        animator.SetTrigger("CardHurt");
+        UpdateCardDisplay();
+    }
+    
+    public void UpdateCardDisplay()
+    {
+        manaCostText.text = manaCost.ToString();
+        attackPowerText.text = attackPower.ToString();
+        healthText.text = health.ToString();
     }
 }

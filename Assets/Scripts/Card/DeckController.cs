@@ -56,6 +56,18 @@ public class DeckController : MonoBehaviour
 
         HandController.instance.AddToCardToHand(newCard);
     }
+    public void DrawCardPerRound(int DrawCardCount)
+    {
+        StartCoroutine(DrawCardPerRoundIE(DrawCardCount));
+    }
+    public IEnumerator DrawCardPerRoundIE(int DrawCardCount)
+    {
+        for(int i = 0 ; i < DrawCardCount ; i++)
+        {
+            DrawCardToHand();
+            yield return new WaitForSeconds(.3f);
+        }
+    }
 
     public void StartCardDraw(int startCardCount, float betweenCardDraw)
     {
