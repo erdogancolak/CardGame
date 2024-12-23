@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class CardPointsController : MonoBehaviour
         
     }
 
-    public void PlayerAttack()
+    public void CardsAttack()
     {
         StartCoroutine(PlayerAttackIE());
     }
@@ -39,16 +40,30 @@ public class CardPointsController : MonoBehaviour
                 if (enemyCardPoints[i].activeCard != null)
                 {
                     enemyCardPoints[i].activeCard.GetDamage(playerCardPoints[i].activeCard.attackPower);
-                    playerCardPoints[i].activeCard.animator.SetTrigger("CardAttack");
                 }
                 else
                 {
-                    
+                    TowerHealthController.instance.ChangeEnemyTowerHealth(playerCardPoints[i].activeCard.attackPower);
+                    playerCardPoints[i].activeCard.animator.SetTrigger("CardAttack");
                 }
-                yield return new WaitForSeconds(timeBetweenAttack);
             }
+            if (enemyCardPoints[i].activeCard != null)
+            {
+                if (playerCardPoints[i].activeCard != null)
+                {
+                    playerCardPoints[i].activeCard.GetDamage(enemyCardPoints[i].activeCard.attackPower);
+                }
+                else
+                {
+                    TowerHealthController.instance.ChangePlayerTowerHealth(enemyCardPoints[i].activeCard.attackPower);
+                    enemyCardPoints[i].activeCard.animator.SetTrigger("CardAttack");
+                }
+            }
+            yield return new WaitForSeconds(timeBetweenAttack);
         }
         CheckAssignedCards();
+
+        CleanBattleArena();
 
         BattleController.instance.AdvanceTurn();
     }
@@ -74,6 +89,19 @@ public class CardPointsController : MonoBehaviour
                 {
                     point.activeCard = null;
                 }
+            }
+        }
+    }
+
+    public void CleanBattleArena()
+    {
+        for (int i = 0; i < playerCardPoints.Length; i++)
+        {
+            if (playerCardPoints[i].activeCard != null)
+            {
+                HandController.instance.AddToCardToHand(playerCardPoints[i].activeCard);
+                playerCardPoints[i].activeCard.GetComponent<Collider2D>().enabled = true;
+                playerCardPoints[i].activeCard = null;
             }
         }
     }

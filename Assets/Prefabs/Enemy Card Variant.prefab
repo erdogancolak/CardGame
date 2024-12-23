@@ -189,6 +189,10 @@ PrefabInstance:
       value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8405660435752290043, guid: 2352a3cebc9b4bf488b86d680d687385, type: 3}
+      propertyPath: cardSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ddfba722f4a41ea42b2c87f124e4193d, type: 2}
+    - target: {fileID: 8405660435752290043, guid: 2352a3cebc9b4bf488b86d680d687385, type: 3}
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}

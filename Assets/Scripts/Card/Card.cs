@@ -222,16 +222,24 @@ public class Card : MonoBehaviour
 
     public void GetDamage(int damageAmount)
     {
+        animator.SetTrigger("CardAttack");
+        
         health -= damageAmount;
 
-        if(health <= 0)
+        StartCoroutine(CheckHealthAfterGetDamage());
+
+        UpdateCardDisplay();
+    }
+
+    IEnumerator CheckHealthAfterGetDamage()
+    {
+        yield return new WaitForSeconds(.3f);
+        if (health <= 0)
         {
             health = 0;
 
             Destroy(gameObject);
         }
-        animator.SetTrigger("CardHurt");
-        UpdateCardDisplay();
     }
     
     public void UpdateCardDisplay()
