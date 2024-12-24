@@ -15,6 +15,8 @@ public class BattleController : MonoBehaviour
     public float betweenCardDraw;
 
     public int drawCardPerRound;
+
+    public int turnCount;
     public enum TurnOrder { playerActive,enemyActive,allCardAttack}
     public TurnOrder currentOrder;
     private void Awake()
@@ -49,27 +51,39 @@ public class BattleController : MonoBehaviour
 
     public void AdvanceTurn()
     {
-        currentOrder++;
-
-        if((int)currentOrder >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+        //currentOrder++;
+        turnCount++;
+        if(turnCount == 8)
         {
-            currentOrder = 0;
+            currentOrder = TurnOrder.allCardAttack;
         }
+        //if((int)currentOrder >= System.Enum.GetValues(typeof(TurnOrder)).Length)
+        //{
+        //    currentOrder = 0;
+        //}
 
         switch (currentOrder)
         {
             case TurnOrder.playerActive:
 
-                fillPlayerMana();
+                //fillPlayerMana();
+
+                UiController.instance.endTurnButton.SetActive(true);
+                UiController.instance.drawCardButton.SetActive(true);
 
                 DeckController.instance.DrawCardPerRound(drawCardPerRound);
 
                 break;
             case TurnOrder.enemyActive:
+                for (int i = 0; i < 2; i++)
+                {
+                    EnemyController.instance.StartAction();
+                }
                 break;
-
             case TurnOrder.allCardAttack:
+                turnCount = -1;
                 CardPointsController.instance.CardsAttack();
+                fillPlayerMana();
                 break;
         }
     }

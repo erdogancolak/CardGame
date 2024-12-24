@@ -64,7 +64,7 @@ public class CardPointsController : MonoBehaviour
         CheckAssignedCards();
 
         CleanBattleArena();
-
+        BattleController.instance.currentOrder = BattleController.TurnOrder.enemyActive;
         BattleController.instance.AdvanceTurn();
     }
 
@@ -99,9 +99,11 @@ public class CardPointsController : MonoBehaviour
         {
             if (playerCardPoints[i].activeCard != null)
             {
-                HandController.instance.AddToCardToHand(playerCardPoints[i].activeCard);
-                playerCardPoints[i].activeCard.GetComponent<Collider2D>().enabled = true;
-                playerCardPoints[i].activeCard = null;
+                Destroy(playerCardPoints[i].activeCard.gameObject);
+            }
+            if (enemyCardPoints[i].activeCard != null)
+            {
+                Destroy(enemyCardPoints[i].activeCard.gameObject);
             }
         }
     }

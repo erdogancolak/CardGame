@@ -65,6 +65,7 @@ public class UiController : MonoBehaviour
         endTurnButton.SetActive(false);
         drawCardButton.SetActive(false);
 
+        BattleController.instance.currentOrder = BattleController.TurnOrder.enemyActive;
         BattleController.instance.AdvanceTurn();
     }
 }
