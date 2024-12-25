@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 463cb084c43992541a8d856ce7b68705
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -400941199919839822
+    second: CardModelsNew-export_0
+  - first:
+      213: 1877306759107055101
+    second: CardModelsNew-export_1
+  - first:
+      213: 3516783911851952276
+    second: CardModelsNew-export_2
+  - first:
+      213: 7786655027636240514
+    second: CardModelsNew-export_3
+  - first:
+      213: -4351325789604764249
+    second: CardModelsNew-export_4
+  - first:
+      213: -8800951818300213562
+    second: CardModelsNew-export_5
+  - first:
+      213: -108966206579095663
+    second: CardModelsNew-export_6
+  - first:
+      213: -1614368416769757782
+    second: CardModelsNew-export_7
+  - first:
+      213: -1531058431066958609
+    second: CardModelsNew-export_8
+  - first:
+      213: -6418897564729843041
+    second: CardModelsNew-export_9
+  - first:
+      213: 4958483712579856854
+    second: CardModelsNew-export_10
+  - first:
+      213: -4797763284528303094
+    second: CardModelsNew-export_11
+  - first:
+      213: -2994741637874269642
+    second: CardModelsNew-export_12
+  - first:
+      213: 7115367067196302183
+    second: CardModelsNew-export_13
+  - first:
+      213: -8933231272312383472
+    second: CardModelsNew-export_14
+  - first:
+      213: -1185615961431958256
+    second: CardModelsNew-export_15
+  - first:
+      213: -2515535074347719952
+    second: CardModelsNew-export_16
+  - first:
+      213: 5344773978641906526
+    second: CardModelsNew-export_17
+  - first:
+      213: -5956668256649117254
+    second: CardModelsNew-export_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CardModelsNew-export_1
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 3775
+        width: 1289
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd040f0d888d0a10800000000000000
+      internalID: 1877306759107055101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_3
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 3807
+        width: 1289
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28084cefd71cf0c60800000000000000
+      internalID: 7786655027636240514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_4
+      rect:
+        serializedVersion: 2
+        x: 4528
+        y: 3807
+        width: 1286
+        height: 2526
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5ac98af3cfc93c0800000000000000
+      internalID: -4351325789604764249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_5
+      rect:
+        serializedVersion: 2
+        x: 6186
+        y: 3795
+        width: 1289
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c633e063fcbcd580800000000000000
+      internalID: -8800951818300213562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_12
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 877
+        width: 1286
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632ce60e85a8076d0800000000000000
+      internalID: -2994741637874269642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_14
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 877
+        width: 1285
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018d865fc79c60480800000000000000
+      internalID: -8933231272312383472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_16
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 877
+        width: 1285
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2e7718d26071dd0800000000000000
+      internalID: -2515535074347719952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardModelsNew-export_18
+      rect:
+        serializedVersion: 2
+        x: 5846
+        y: 897
+        width: 1289
+        height: 2518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab18595c7c9a55da0800000000000000
+      internalID: -5956668256649117254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 23aa10ac9898d7d44a5a66be75d993c5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CardModelsNew-export_0: -400941199919839822
+      CardModelsNew-export_1: 1877306759107055101
+      CardModelsNew-export_10: 4958483712579856854
+      CardModelsNew-export_11: -4797763284528303094
+      CardModelsNew-export_12: -2994741637874269642
+      CardModelsNew-export_13: 7115367067196302183
+      CardModelsNew-export_14: -8933231272312383472
+      CardModelsNew-export_15: -1185615961431958256
+      CardModelsNew-export_16: -2515535074347719952
+      CardModelsNew-export_17: 5344773978641906526
+      CardModelsNew-export_18: -5956668256649117254
+      CardModelsNew-export_19: -1337999245
+      CardModelsNew-export_2: 3516783911851952276
+      CardModelsNew-export_3: 7786655027636240514
+      CardModelsNew-export_4: -4351325789604764249
+      CardModelsNew-export_5: -8800951818300213562
+      CardModelsNew-export_6: -108966206579095663
+      CardModelsNew-export_7: -1614368416769757782
+      CardModelsNew-export_8: -1531058431066958609
+      CardModelsNew-export_9: -6418897564729843041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

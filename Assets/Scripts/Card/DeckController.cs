@@ -17,6 +17,7 @@ public class DeckController : MonoBehaviour
     }
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         SetupDeck();
     }
 

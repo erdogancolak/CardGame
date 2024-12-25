@@ -29,6 +29,8 @@ public class GuıController : MonoBehaviour
     [SerializeField] private TMP_Text resolutionsText;
     [SerializeField] private ResItem[] resolutions;
     private int selectedResolutions;
+    [Space]
+    [SerializeField] private GameObject DeckControllCanvas;
     private void Start()
     {
         selectedResolutions = 0;
@@ -54,9 +56,8 @@ public class GuıController : MonoBehaviour
     }
     public void CloseButton()
     {
-        Animator playAnimator = CloseButtonObject.GetComponent<Animator>();
-        playAnimator.SetTrigger("Clicked");
         OptionsCanvas.SetActive(false);
+        DeckControllCanvas.SetActive(false);
     }
     public void ApplyButton()
     {
@@ -103,6 +104,13 @@ public class GuıController : MonoBehaviour
     public void MusicVolumeSet()
     {
         Mixer.SetFloat("MusicVol", MusicVolumeSlider.value);
+    }
+
+    public void DeckControlButton()
+    {
+        Animator playAnimator = PlayButtonObject.GetComponent<Animator>();
+        playAnimator.SetTrigger("Clicked");
+        DeckControllCanvas.SetActive(true);
     }
 }
 [System.Serializable]

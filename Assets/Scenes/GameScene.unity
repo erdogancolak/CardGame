@@ -1753,8 +1753,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.554717, g: 0.1591496, b: 0.04919186, a: 1}
+  m_Sprite: {fileID: -3688651710826442609, guid: 208486827d4d8904bac5f15693d6ca45, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -1795,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1421163801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1809,16 +1809,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckToUse:
-  - {fileID: 11400000, guid: 7ba483c8268581c409ccd5f395eac03c, type: 2}
-  - {fileID: 11400000, guid: ebfd0cac82b0de24fa5bcdf7fff9a064, type: 2}
-  - {fileID: 11400000, guid: 4f1ecd7a8ffce2144b102128642e31e2, type: 2}
-  - {fileID: 11400000, guid: ddfba722f4a41ea42b2c87f124e4193d, type: 2}
-  - {fileID: 11400000, guid: d5627c66563c50f4383bb1e4c345d42a, type: 2}
-  - {fileID: 11400000, guid: dafeeead08a37c14989743346610f403, type: 2}
-  - {fileID: 11400000, guid: c600f35c2f4334e40ab72579193b21fd, type: 2}
-  - {fileID: 11400000, guid: 4ddee94c7f4e02a4dabfafa0ed976ba4, type: 2}
-  - {fileID: 11400000, guid: 55088cb6bd3af56479cbd41d1f956743, type: 2}
-  - {fileID: 11400000, guid: 2b94457ef18b2a946ba6968bc43aafca, type: 2}
   - {fileID: 11400000, guid: 15575ed649ca1974396987e2c8ea76ac, type: 2}
   activeCards: []
   cardToSpawn: {fileID: 8405660435752290043, guid: 2352a3cebc9b4bf488b86d680d687385, type: 3}
