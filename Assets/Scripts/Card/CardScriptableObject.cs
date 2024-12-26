@@ -6,9 +6,5 @@ public class CardScriptableObject : ScriptableObject
     public int attackPower;
     public int health;
     public string cardName;
-    public string cardType;
-    [TextArea] public string cardDescription;
-    [TextArea] public string cardLore;
-    public Sprite cardSprite;
-    public Sprite backgroundSprite;
+    public Sprite modelHolderSprite;
 }

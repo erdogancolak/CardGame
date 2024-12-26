@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     }
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         SetupDeck();
     }
 

@@ -106,5 +106,6 @@ public class CardPointsController : MonoBehaviour
                 Destroy(enemyCardPoints[i].activeCard.gameObject);
             }
         }
+        BattleController.instance.fillPlayerMana();
     }
 }

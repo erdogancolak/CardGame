@@ -797,6 +797,7 @@ MonoBehaviour:
   startCardCount: 6
   betweenCardDraw: 0.3
   drawCardPerRound: 1
+  addManaPerRound: 1
   turnCount: 0
   currentOrder: 0
 --- !u!4 &575508961
@@ -1808,8 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9320bf54f8e650f4f97b38bdbe3f701e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckToUse:
-  - {fileID: 11400000, guid: 15575ed649ca1974396987e2c8ea76ac, type: 2}
+  deckToUse: []
   activeCards: []
   cardToSpawn: {fileID: 8405660435752290043, guid: 2352a3cebc9b4bf488b86d680d687385, type: 3}
 --- !u!4 &1421163802
@@ -3286,7 +3286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1940753484
 Transform:
   m_ObjectHideFlags: 0
@@ -3315,18 +3315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c2221587c0cd742a35bf4e76b0b675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckToUse:
-  - {fileID: 11400000, guid: 7ba483c8268581c409ccd5f395eac03c, type: 2}
-  - {fileID: 11400000, guid: ebfd0cac82b0de24fa5bcdf7fff9a064, type: 2}
-  - {fileID: 11400000, guid: 4f1ecd7a8ffce2144b102128642e31e2, type: 2}
-  - {fileID: 11400000, guid: ddfba722f4a41ea42b2c87f124e4193d, type: 2}
-  - {fileID: 11400000, guid: d5627c66563c50f4383bb1e4c345d42a, type: 2}
-  - {fileID: 11400000, guid: dafeeead08a37c14989743346610f403, type: 2}
-  - {fileID: 11400000, guid: c600f35c2f4334e40ab72579193b21fd, type: 2}
-  - {fileID: 11400000, guid: 4ddee94c7f4e02a4dabfafa0ed976ba4, type: 2}
-  - {fileID: 11400000, guid: 55088cb6bd3af56479cbd41d1f956743, type: 2}
-  - {fileID: 11400000, guid: 2b94457ef18b2a946ba6968bc43aafca, type: 2}
-  - {fileID: 11400000, guid: 15575ed649ca1974396987e2c8ea76ac, type: 2}
+  deckToUse: []
   activeCards: []
   cardToSpawn: {fileID: 8438638578219214790, guid: 372a4a98722f9954696d6f8837db50fa, type: 3}
   cardSpawnPoint: {fileID: 503310691}

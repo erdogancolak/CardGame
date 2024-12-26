@@ -14,21 +14,14 @@ public class Card : MonoBehaviour
     [HideInInspector] public int attackPower;
     [HideInInspector] public int health;
     [HideInInspector] public string cardName;
-    [HideInInspector] public string cardType;
-    [HideInInspector] public string cardDescription;
-    [HideInInspector] public string cardLore;
-
+   
     public TMP_Text manaCostText;
     public TMP_Text attackPowerText;
     public TMP_Text healthText;
     public TMP_Text cardNameText;
-    public TMP_Text cardTypeText;
-    public TMP_Text cardDescriptionText;
-    public TMP_Text cardLoreText;
-    public Image characterImage;
-    public Image backgroundImage;
+    public GameObject modelHolder;
 
-    public Animator animator;
+    [HideInInspector] public Animator animator;
 
     public bool isPlayer;
 
@@ -87,18 +80,13 @@ public class Card : MonoBehaviour
         attackPower = cardSO.attackPower;
         health = cardSO.health;
         cardName = cardSO.cardName;
-        cardType = cardSO.cardType;
-        cardDescription = cardSO.cardDescription;
-        cardLore = cardSO.cardLore;
+       
 
         UpdateCardDisplay();
 
         cardNameText.text = cardName.ToString();
-        cardTypeText.text = cardType.ToString();
-        cardDescriptionText.text = cardDescription.ToString();
-        cardLoreText.text = cardLore.ToString();
-        characterImage.sprite = cardSO.cardSprite;
-        backgroundImage.sprite = cardSO.backgroundSprite;
+        modelHolder.GetComponent<SpriteRenderer>().sprite = cardSO.modelHolderSprite;
+       
     }
 
     public void MoveToPoint(Vector3 pointToMoveTo , Quaternion rotToMatch)

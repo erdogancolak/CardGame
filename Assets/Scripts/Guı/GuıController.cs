@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 
 public class GuıController : MonoBehaviour
 {
+    public static GuıController instance;
     [SerializeField] private string SceneName;
     [Space]
     [SerializeField] private GameObject PlayButtonObject;
@@ -31,6 +32,10 @@ public class GuıController : MonoBehaviour
     private int selectedResolutions;
     [Space]
     [SerializeField] private GameObject DeckControllCanvas;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         selectedResolutions = 0;

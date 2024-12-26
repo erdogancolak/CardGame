@@ -6,7 +6,7 @@ public class BattleController : MonoBehaviour
 
     [HideInInspector] public int startingMana;
     public int maxMana;
-    [HideInInspector] public int playerMana;
+    /*[HideInInspector]*/ public int playerMana;
 
     public int minStartingMana;
     public int maxStartingMana;
@@ -16,7 +16,9 @@ public class BattleController : MonoBehaviour
 
     public int drawCardPerRound;
 
-    public int turnCount;
+    public int addManaPerRound;
+
+    [HideInInspector] public int turnCount;
     public enum TurnOrder { playerActive,enemyActive,allCardAttack}
     public TurnOrder currentOrder;
     private void Awake()
@@ -66,8 +68,6 @@ public class BattleController : MonoBehaviour
         {
             case TurnOrder.playerActive:
 
-                //fillPlayerMana();
-
                 UiController.instance.endTurnButton.SetActive(true);
                 UiController.instance.drawCardButton.SetActive(true);
 
@@ -78,12 +78,15 @@ public class BattleController : MonoBehaviour
                 for (int i = 0; i < 2; i++)
                 {
                     EnemyController.instance.StartAction();
+
+                    playerMana += addManaPerRound;
+
+                    UiController.instance.SetPlayerManaText(playerMana);
                 }
                 break;
             case TurnOrder.allCardAttack:
                 turnCount = -1;
                 CardPointsController.instance.CardsAttack();
-                fillPlayerMana();
                 break;
         }
     }

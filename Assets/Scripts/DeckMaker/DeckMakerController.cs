@@ -153,6 +153,16 @@ public class DeckMakerController : MonoBehaviour
     public void ApplyButton()
     {
         DeckController.instance.deckToUse.Clear();
+        GeneratePlayerDeck();
+        GenerateEnemyDeck();
+    }
+
+    public void GeneratePlayerDeck()
+    {
+        if(SelectedDeck1 == SelectedDeck2 && SelectedDeck1 == null && SelectedDeck2 == null)
+        {
+            return;
+        }
         switch (SelectedDeck1)
         {
             case ("Nature"):
@@ -252,6 +262,121 @@ public class DeckMakerController : MonoBehaviour
                 for (int i = 0; i < ghostDeck.Count; i++)
                 {
                     DeckController.instance.deckToUse.Add(ghostDeck[i]);
+                }
+                break;
+        }
+        GuýController.instance.CloseButton();
+    }
+
+    public void GenerateEnemyDeck()
+    {
+        int EnemyDeckGenerator1 = Random.Range(0, 8);
+        int EnemyDeckGenerator2 = Random.Range(0, 8);
+        do
+        {
+            EnemyDeckGenerator2 = Random.Range(0, 8);
+        }
+        while (EnemyDeckGenerator2 == EnemyDeckGenerator1);
+
+        switch(EnemyDeckGenerator1)
+        {
+            case 0:
+                for (int i = 0; i < natureDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(natureDeck[i]);
+                }
+                break;
+            case 1:
+                for (int i = 0; i < lightningDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(lightningDeck[i]);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < fireDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(fireDeck[i]);
+                }
+                break;
+            case 3:
+                for (int i = 0; i < iceDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(iceDeck[i]);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < crownDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(crownDeck[i]);
+                }
+                break;
+            case 5:
+                for (int i = 0; i < mageDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(mageDeck[i]);
+                }
+                break;
+            case 6:
+                for (int i = 0; i < oceanDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(oceanDeck[i]);
+                }
+                break;
+            case 7:
+                for (int i = 0; i < ghostDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(ghostDeck[i]);
+                }
+                break;
+        }
+        switch (EnemyDeckGenerator2)
+        {
+            case 0:
+                for (int i = 0; i < natureDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(natureDeck[i]);
+                }
+                break;
+            case 1:
+                for (int i = 0; i < lightningDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(lightningDeck[i]);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < fireDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(fireDeck[i]);
+                }
+                break;
+            case 3:
+                for (int i = 0; i < iceDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(iceDeck[i]);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < crownDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(crownDeck[i]);
+                }
+                break;
+            case 5:
+                for (int i = 0; i < mageDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(mageDeck[i]);
+                }
+                break;
+            case 6:
+                for (int i = 0; i < oceanDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(oceanDeck[i]);
+                }
+                break;
+            case 7:
+                for (int i = 0; i < ghostDeck.Count; i++)
+                {
+                    EnemyController.instance.deckToUse.Add(ghostDeck[i]);
                 }
                 break;
         }
