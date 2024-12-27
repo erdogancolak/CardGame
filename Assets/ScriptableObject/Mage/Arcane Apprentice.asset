@@ -17,3 +17,4 @@ MonoBehaviour:
   health: 2
   cardName: Arcane Apprentice
   modelHolderSprite: {fileID: -8933231272312383472, guid: 463cb084c43992541a8d856ce7b68705, type: 3}
+  abilityName: Mage

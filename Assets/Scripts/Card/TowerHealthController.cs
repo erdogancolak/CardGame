@@ -50,7 +50,6 @@ public class TowerHealthController : MonoBehaviour
 
             Debug.Log("Enemy Lose Game");
         }
-
         enemyHealthText.text = enemyHealth.ToString();
     }
 }

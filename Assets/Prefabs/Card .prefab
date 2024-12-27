@@ -102,8 +102,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
-  m_sharedMaterial: {fileID: -7630038545533413912, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e9cfbd9a7b2d6224c8354714560f59f7, type: 2}
+  m_sharedMaterial: {fileID: -7630038545533413912, guid: e9cfbd9a7b2d6224c8354714560f59f7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -240,8 +240,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
-  m_sharedMaterial: {fileID: -7630038545533413912, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 98be7ec03d1afb341be78066ddb130f5, type: 2}
+  m_sharedMaterial: {fileID: -7630038545533413912, guid: 98be7ec03d1afb341be78066ddb130f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 8405660435752290043}
   - component: {fileID: 7449900986335198918}
   - component: {fileID: 181812769819639906}
+  - component: {fileID: 375235754212910585}
   m_Layer: 0
   m_Name: 'Card '
   m_TagString: Untagged
@@ -361,6 +362,7 @@ MonoBehaviour:
   attackPower: 0
   health: 0
   cardName: 
+  cardAbility: 
   manaCostText: {fileID: 3092433140596925698}
   attackPowerText: {fileID: 281659705209650511}
   healthText: {fileID: 7439236696248709753}
@@ -449,6 +451,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &375235754212910585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897828574183594086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a037b7677cb724eb76250d1355e21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ability: 
+  NatureHealthIndex: 2
+  FireAttackIndex: 1
+  IceAttackIndex: 1
+  MageAttackIndex: 2
 --- !u!1 &4932067528848731394
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,8 +537,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
-  m_sharedMaterial: {fileID: -7630038545533413912, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99b7378e8ee44f24e9033c79197c2f27, type: 2}
+  m_sharedMaterial: {fileID: -7630038545533413912, guid: 99b7378e8ee44f24e9033c79197c2f27, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -652,7 +671,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card Name
+  m_text: 'Card Name
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
   m_sharedMaterial: {fileID: -7630038545533413912, guid: d93114b6529d23a428ed42cb8c3692b4, type: 2}
@@ -679,15 +700,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 53
+  m_fontSize: 38.05
+  m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 45
+  m_fontSizeMin: 31
   m_fontSizeMax: 53
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

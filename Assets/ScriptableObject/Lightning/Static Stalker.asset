@@ -17,3 +17,4 @@ MonoBehaviour:
   health: 5
   cardName: Static Stalker
   modelHolderSprite: {fileID: 7786655027636240514, guid: 463cb084c43992541a8d856ce7b68705, type: 3}
+  abilityName: Lightning

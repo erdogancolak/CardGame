@@ -35,6 +35,42 @@ public class CardPointsController : MonoBehaviour
 
         for(int i = 0 ; i < playerCardPoints.Length ; i++)
         {
+            //CARD ABILITY
+            if (playerCardPoints[i].activeCard != null)
+            {
+                if (playerCardPoints[i].activeCard.cardAbility != "Nature" && playerCardPoints[i].activeCard.cardAbility != "Fire" && enemyCardPoints[i].activeCard != null)
+                {
+                    playerCardPoints[i].activeCard.GetComponent<CardAbility>().playAbility(playerCardPoints[i].activeCard, enemyCardPoints[i].activeCard);
+                }
+                else
+                {
+                    int x = i + 1;
+                    if (x != 5 && playerCardPoints[x].activeCard != null)
+                    {
+                        playerCardPoints[i].activeCard.GetComponent<CardAbility>().playAbility(playerCardPoints[i].activeCard, playerCardPoints[x].activeCard);
+                    }
+                }
+                
+            }
+            if (enemyCardPoints[i].activeCard != null)
+            {
+
+                if (enemyCardPoints[i].activeCard.cardAbility != "Nature" && enemyCardPoints[i].activeCard.cardAbility != "Fire" && playerCardPoints[i].activeCard != null)
+                {
+                    enemyCardPoints[i].activeCard.GetComponent<CardAbility>().playAbility(enemyCardPoints[i].activeCard, playerCardPoints[i].activeCard);
+                }
+                else
+                {
+                    int x = i + 1;
+                    if (x != 5)
+                    {
+                        enemyCardPoints[i].activeCard.GetComponent<CardAbility>().playAbility(enemyCardPoints[i].activeCard, enemyCardPoints[x].activeCard);
+                    }
+                }
+            }
+            //CARD ABILITY
+            //------------------------
+            //CARD ATTACKS 
             if (playerCardPoints[i].activeCard != null)
             {
                 if (enemyCardPoints[i].activeCard != null)
@@ -59,6 +95,7 @@ public class CardPointsController : MonoBehaviour
                     enemyCardPoints[i].activeCard.animator.SetTrigger("CardAttack");
                 }
             }
+            //CARD ATTACKS
             yield return new WaitForSeconds(timeBetweenAttack);
         }
         CheckAssignedCards();

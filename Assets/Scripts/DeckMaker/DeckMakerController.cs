@@ -278,7 +278,7 @@ public class DeckMakerController : MonoBehaviour
         }
         while (EnemyDeckGenerator2 == EnemyDeckGenerator1);
 
-        switch(EnemyDeckGenerator1)
+        switch (EnemyDeckGenerator1)
         {
             case 0:
                 for (int i = 0; i < natureDeck.Count; i++)

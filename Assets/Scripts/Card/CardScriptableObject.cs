@@ -7,4 +7,6 @@ public class CardScriptableObject : ScriptableObject
     public int health;
     public string cardName;
     public Sprite modelHolderSprite;
+    [Space]
+    public string abilityName;
 }

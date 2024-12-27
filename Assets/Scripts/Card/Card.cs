@@ -14,6 +14,7 @@ public class Card : MonoBehaviour
     [HideInInspector] public int attackPower;
     [HideInInspector] public int health;
     [HideInInspector] public string cardName;
+    [HideInInspector] public string cardAbility;
    
     public TMP_Text manaCostText;
     public TMP_Text attackPowerText;
@@ -45,7 +46,6 @@ public class Card : MonoBehaviour
 
     private List<CardPlacePoint> allFrames;
 
-
     void Start()
     {
         if(targetPoint == Vector3.zero)
@@ -76,6 +76,7 @@ public class Card : MonoBehaviour
     }
     public void cardInfo()
     {
+        cardAbility = cardSO.abilityName;
         manaCost = cardSO.manaCost;
         attackPower = cardSO.attackPower;
         health = cardSO.health;
