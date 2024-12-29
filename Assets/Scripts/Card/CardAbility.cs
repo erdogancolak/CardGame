@@ -58,7 +58,6 @@ public class CardAbility : MonoBehaviour
     {
         card2.health += NatureHealthIndex;
         card2.UpdateCardDisplay();
-        //WORK
     }
     public void Lightning(Card card1,Card card2)
     {
@@ -66,19 +65,16 @@ public class CardAbility : MonoBehaviour
         {
             card2.attackPower = 0;
         }
-        //WORK
     }
     public void Fire(Card card2)
     {
         card2.attackPower += FireAttackIndex;
         card2.UpdateCardDisplay();
-        //WORK
     }
     public void Ice(Card card2)
     {
         card2.attackPower -= IceAttackIndex;
         card2.UpdateCardDisplay();
-        //WORK
     }
     public void Crown(Card card1)
     {
@@ -100,7 +96,6 @@ public class CardAbility : MonoBehaviour
             }
             TowerHealthController.instance.enemyHealthText.text = TowerHealthController.instance.enemyHealth.ToString();
         }
-        //WORK
     }
     public void Mage(Card card2)
     {
@@ -121,7 +116,6 @@ public class CardAbility : MonoBehaviour
             }
            
         }
-        //WORK
     }
     public void Ghost(Card card2)
     {
@@ -129,7 +123,6 @@ public class CardAbility : MonoBehaviour
         {
             card2.attackPower = 0;
         }
-        //WORK
     }
 
 }
