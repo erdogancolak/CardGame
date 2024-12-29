@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     public Card cardToSpawn;
     public Transform cardSpawnPoint;
 
-    public int cardPlacePointIndex;
+    [HideInInspector] public int cardPlacePointIndex;
     private void Awake()
     {
         instance = this;
@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
                 cardPoints.RemoveAt(cardPlacePointIndex);
             }
             cardPlacePointIndex++;
-
+            
             if (selectedPoint.activeCard == null)
             {
                 Card newCard = Instantiate(cardToSpawn, cardSpawnPoint.position, cardSpawnPoint.rotation);

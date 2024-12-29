@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class GuıController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class GuıController : MonoBehaviour
     private int selectedResolutions;
     [Space]
     [SerializeField] private GameObject DeckControllCanvas;
+    [Space]
+    [SerializeField] private GameObject DeckErrorText;
     private void Awake()
     {
         instance = this;
@@ -43,9 +46,22 @@ public class GuıController : MonoBehaviour
     }
     public void PlayButton()
     {
-        Animator playAnimator = PlayButtonObject.GetComponent<Animator>();
-        playAnimator.SetTrigger("Clicked");
-        SceneManager.LoadScene(SceneName);
+        if(DeckControllCanvas.GetComponent<DeckMakerController>().isApply)
+        {
+            Animator playAnimator = PlayButtonObject.GetComponent<Animator>();
+            playAnimator.SetTrigger("Clicked");
+            SceneManager.LoadScene(SceneName);
+        }
+        else
+        {
+            DeckErrorText.SetActive(true);
+            StartCoroutine(deckErrorIE());
+        }
+    }
+    IEnumerator deckErrorIE()
+    {
+        yield return new WaitForSeconds(2f);
+        DeckErrorText.SetActive(false);
     }
     public void OptionsButton()
     {

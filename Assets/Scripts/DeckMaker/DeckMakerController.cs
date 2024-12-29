@@ -3,22 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class DeckMakerController : MonoBehaviour
 {
-    //[SerializeField] private Sprite natureSprite;
-    //[SerializeField] private Sprite LightningSprite;
-    //[SerializeField] private Sprite FireSprite;
-    //[SerializeField] private Sprite IceSprite;
-    //[SerializeField] private Sprite CrownSprite;
-    //[SerializeField] private Sprite MageSprite;
-    //[SerializeField] private Sprite OceanSprite;
-    //[SerializeField] private Sprite GhostSprite;
-
-    //[SerializeField] private List<Image> SelectedFrames = new List<Image>();
-
-    //private int selectedFrameIndex;
-
     [SerializeField] private List<CardScriptableObject> natureDeck = new List<CardScriptableObject>();
     [SerializeField] private List<CardScriptableObject> lightningDeck = new List<CardScriptableObject>();
     [SerializeField] private List<CardScriptableObject> fireDeck = new List<CardScriptableObject>();
@@ -27,10 +15,15 @@ public class DeckMakerController : MonoBehaviour
     [SerializeField] private List<CardScriptableObject> mageDeck = new List<CardScriptableObject>();
     [SerializeField] private List<CardScriptableObject> oceanDeck = new List<CardScriptableObject>();
     [SerializeField] private List<CardScriptableObject> ghostDeck = new List<CardScriptableObject>();
-
-    //[HideInInspector] private string SelectedDeck1;
-    //[HideInInspector] private string SelectedDeck2;
     [Space]
+    public List<CardScriptableObject> natureDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> lightningDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> fireDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> iceDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> crownDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> mageDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> oceanDeckHold = new List<CardScriptableObject>();
+    public List<CardScriptableObject> ghostDeckHold = new List<CardScriptableObject>();
 
     [HideInInspector] public int natureCount;
     [HideInInspector] public int lightningCount;
@@ -56,6 +49,20 @@ public class DeckMakerController : MonoBehaviour
     public int maxTotalCard;
 
     private bool canAdd;
+    public bool isApply;
+
+    public GameObject applyError;
+    private void Start()
+    {
+        DeckHold(natureDeck,natureDeckHold);
+        DeckHold(lightningDeck,lightningDeckHold);
+        DeckHold(fireDeck,fireDeckHold);
+        DeckHold(iceDeck,iceDeckHold);
+        DeckHold(crownDeck,crownDeckHold);
+        DeckHold(mageDeck,mageDeckHold);
+        DeckHold(oceanDeck,oceanDeckHold);
+        DeckHold(ghostDeck,ghostDeckHold);
+    }
 
     private void Update()
     {
@@ -107,6 +114,7 @@ public class DeckMakerController : MonoBehaviour
             natureCount = 0;
         }
         natureCountText.text = (natureCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Lightning
@@ -154,6 +162,7 @@ public class DeckMakerController : MonoBehaviour
             lightningCount = 0;
         }
         lightningCountText.text = (lightningCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Fire
@@ -201,6 +210,7 @@ public class DeckMakerController : MonoBehaviour
             fireCount = 0;
         }
         fireCountText.text = (fireCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Ice
@@ -248,6 +258,7 @@ public class DeckMakerController : MonoBehaviour
             iceCount = 0;
         }
         iceCountText.text = (iceCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Crown
@@ -295,6 +306,7 @@ public class DeckMakerController : MonoBehaviour
             crownCount = 0;
         }
         crownCountText.text = (crownCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Mage
@@ -342,6 +354,7 @@ public class DeckMakerController : MonoBehaviour
             mageCount = 0;
         }
         mageCountText.text = (mageCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Ocean
@@ -389,6 +402,7 @@ public class DeckMakerController : MonoBehaviour
             oceanCount = 0;
         }
         oceanCountText.text = (oceanCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
     #region Ghost
@@ -436,6 +450,7 @@ public class DeckMakerController : MonoBehaviour
             ghostCount = 0;
         }
         ghostCountText.text = (ghostCount.ToString() + " X");
+        ResetAllTheme();
     }
     #endregion
 
@@ -452,126 +467,196 @@ public class DeckMakerController : MonoBehaviour
         }
         totalCountText.text = totalCount.ToString() + " / " + maxTotalCard.ToString();
     }
-
-    public void ApplyButton()
+    public void ResetAllTheme()
     {
         DeckController.instance.deckToUse.Clear();
-        //GeneratePlayerDeck();
-        //GenerateEnemyDeck();
+        natureDeck.Clear();
+        DeckHold(natureDeckHold, natureDeck);
+        lightningDeck.Clear();
+        DeckHold(lightningDeckHold, lightningDeck);
+        fireDeck.Clear();
+        DeckHold(fireDeckHold, fireDeck);
+        iceDeck.Clear();
+        DeckHold(iceDeckHold, iceDeck);
+        crownDeck.Clear();
+        DeckHold(crownDeckHold, crownDeck);
+        mageDeck.Clear();
+        DeckHold(mageDeckHold, mageDeck);
+        oceanDeck.Clear();
+        DeckHold(oceanDeckHold, oceanDeck);
+        ghostDeck.Clear();
+        DeckHold(ghostDeckHold, ghostDeck);
+        isApply = false;
+    }
+    public void DeckHold(List<CardScriptableObject> deck1,List<CardScriptableObject> deck2)
+    {
+        for(int i = 0;i < deck1.Count;i++)
+        {
+            deck2.Add(deck1[i]);
+        }
+    }
+    public void ApplyButton()
+    {
+        if(totalCount == maxTotalCard)
+        {
+            DeckController.instance.deckToUse.Clear();
+            GenerateEnemyDeck();
+        }
+        else
+        {
+            applyError.SetActive(true);
+            StartCoroutine(applyErrorClose());
+        }
+        
+    }
+    IEnumerator applyErrorClose()
+    {
+        yield return new WaitForSeconds(2f);
+        applyError.SetActive(false);
+    }
+    public void CloseButton()
+    {
+        GuýController.instance.CloseButton();
+        if(totalCount != maxTotalCard)
+        {
+            totalCount = 0;
+            natureCount = 0;
+            lightningCount = 0;
+            fireCount = 0;
+            iceCount = 0;
+            crownCount = 0;
+            mageCount = 0;
+            oceanCount = 0;
+            ghostCount = 0;
+            ResetAllTheme();
+            natureCountText.text = (natureCount.ToString() + " X");
+            lightningCountText.text = (lightningCount.ToString() + " X");
+            fireCountText.text = (fireCount.ToString() + " X");
+            iceCountText.text = (iceCount.ToString() + " X");
+            crownCountText.text = (crownCount.ToString() + " X");
+            mageCountText.text = (mageCount.ToString() + " X");
+            oceanCountText.text = (oceanCount.ToString() + " X");
+            ghostCountText.text = (ghostCount.ToString() + " X");
+        }
+    }
+    public void GeneratePlayerDeck()
+    {
+        if (totalCount == maxTotalCard)
+        {
+            if(natureCount != 0)
+            {
+                for(int i = 0;i < natureCount;i++)
+                {
+                    int randomNumber = Random.Range(0, natureDeck.Count);
+                    DeckController.instance.deckToUse.Add(natureDeck[randomNumber]);
+                    natureDeck.Remove(natureDeck[randomNumber]);
+                }
+            }
+            if(lightningCount != 0)
+            {
+                for(int i = 0;i < lightningCount;i++)
+                {
+                    int randomNumber = Random.Range(0, lightningDeck.Count);
+                    DeckController.instance.deckToUse.Add(lightningDeck[randomNumber]);
+                    lightningDeck.Remove(lightningDeck[randomNumber]);
+                }
+            }
+            if (fireCount != 0)
+            {
+                for (int i = 0; i < fireCount; i++)
+                {
+                    int randomNumber = Random.Range(0, fireDeck.Count);
+                    DeckController.instance.deckToUse.Add(fireDeck[randomNumber]);
+                    fireDeck.Remove(fireDeck[randomNumber]);
+                }
+            }
+            if (iceCount != 0)
+            {
+                for (int i = 0; i < iceCount; i++)
+                {
+                    int randomNumber = Random.Range(0, iceDeck.Count);
+                    DeckController.instance.deckToUse.Add(iceDeck[randomNumber]);
+                    iceDeck.Remove(iceDeck[randomNumber]);
+                }
+            }
+            if (crownCount != 0)
+            {
+                for (int i = 0; i < crownCount; i++)
+                {
+                    int randomNumber = Random.Range(0, crownDeck.Count);
+                    DeckController.instance.deckToUse.Add(crownDeck[randomNumber]);
+                    crownDeck.Remove(crownDeck[randomNumber]);
+                }
+            }
+            if (mageCount != 0)
+            {
+                for (int i = 0; i < mageCount; i++)
+                {
+                    int randomNumber = Random.Range(0, mageDeck.Count);
+                    DeckController.instance.deckToUse.Add(mageDeck[randomNumber]);
+                    mageDeck.Remove(mageDeck[randomNumber]);
+                }
+            }
+            if (oceanCount != 0)
+            {
+                for (int i = 0; i < oceanCount; i++)
+                {
+                    int randomNumber = Random.Range(0, oceanDeck.Count);
+                    DeckController.instance.deckToUse.Add(oceanDeck[randomNumber]);
+                    oceanDeck.Remove(oceanDeck[randomNumber]);
+                }
+            }
+            if (ghostCount != 0)
+            {
+                for (int i = 0; i < ghostCount; i++)
+                {
+                    int randomNumber = Random.Range(0, ghostDeck.Count);
+                    DeckController.instance.deckToUse.Add(ghostDeck[randomNumber]);
+                    ghostDeck.Remove(ghostDeck[randomNumber]);
+                }
+            }
+            GuýController.instance.CloseButton();
+            isApply = true;
+        }
+    }
+    public void GenerateEnemyDeck()
+    {
+        for(int i = 0;i < maxTotalCard; i++)
+        {
+            int randomTheme = Random.Range(0,8);
+            int randomCard = Random.Range(0, 20);
+            switch(randomTheme)
+            {
+                case 0:
+                    EnemyController.instance.deckToUse.Add(natureDeck[randomCard]);
+                    break;
+                case 1:
+                    EnemyController.instance.deckToUse.Add(lightningDeck[randomCard]);
+                    break;
+                case 2:
+                    EnemyController.instance.deckToUse.Add(fireDeck[randomCard]);
+                    break;
+                case 3:
+                    EnemyController.instance.deckToUse.Add(iceDeck[randomCard]);
+                    break;
+                case 4:
+                    EnemyController.instance.deckToUse.Add(crownDeck[randomCard]);
+                    break;
+                case 5:
+                    EnemyController.instance.deckToUse.Add(mageDeck[randomCard]);
+                    break;
+                case 6:
+                    EnemyController.instance.deckToUse.Add(oceanDeck[randomCard]);
+                    break;
+                case 7:
+                    EnemyController.instance.deckToUse.Add(ghostDeck[randomCard]);
+                    break;
+            }
+        }
+        GeneratePlayerDeck();
     }
 
-    //public void GeneratePlayerDeck()
-    //{
-    //    if(SelectedDeck1 == SelectedDeck2 && SelectedDeck1 == null && SelectedDeck2 == null)
-    //    {
-    //        return;
-    //    }
-    //    switch (SelectedDeck1)
-    //    {
-    //        case ("Nature"):
-    //            for (int i = 0; i < natureDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(natureDeck[i]);
-    //            }
-    //            break;
-    //        case ("Lightning"):
-    //            for (int i = 0; i < lightningDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(lightningDeck[i]);
-    //            }
-    //            break;
-    //        case ("Fire"):
-    //            for (int i = 0; i < fireDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(fireDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ice"):
-    //            for (int i = 0; i < iceDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(iceDeck[i]);
-    //            }
-    //            break;
-    //        case ("Crown"):
-    //            for (int i = 0; i < crownDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(crownDeck[i]);
-    //            }
-    //            break;
-    //        case ("Mage"):
-    //            for (int i = 0; i < mageDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(mageDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ocean"):
-    //            for (int i = 0; i < oceanDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(oceanDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ghost"):
-    //            for (int i = 0; i < ghostDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(ghostDeck[i]);
-    //            }
-    //            break;
-    //    }
-    //    switch (SelectedDeck2)
-    //    {
-    //        case ("Nature"):
-    //            for (int i = 0; i < natureDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(natureDeck[i]);
-    //            }
-    //            break;
-    //        case ("Lightning"):
-    //            for (int i = 0; i < lightningDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(lightningDeck[i]);
-    //            }
-    //            break;
-    //        case ("Fire"):
-    //            for (int i = 0; i < fireDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(fireDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ice"):
-    //            for (int i = 0; i < iceDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(iceDeck[i]);
-    //            }
-    //            break;
-    //        case ("Crown"):
-    //            for (int i = 0; i < crownDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(crownDeck[i]);
-    //            }
-    //            break;
-    //        case ("Mage"):
-    //            for (int i = 0; i < mageDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(mageDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ocean"):
-    //            for (int i = 0; i < oceanDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(oceanDeck[i]);
-    //            }
-    //            break;
-    //        case ("Ghost"):
-    //            for (int i = 0; i < ghostDeck.Count; i++)
-    //            {
-    //                DeckController.instance.deckToUse.Add(ghostDeck[i]);
-    //            }
-    //            break;
-    //    }
-    //    GuýController.instance.CloseButton();
-    //}
-
-    //public void GenerateEnemyDeck()
+    //public void GenerateEnemyDeck1()
     //{
     //    int EnemyDeckGenerator1 = Random.Range(0, 8);
     //    int EnemyDeckGenerator2 = Random.Range(0, 8);
