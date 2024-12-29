@@ -35,6 +35,8 @@ public class GuıController : MonoBehaviour
     [SerializeField] private GameObject DeckControllCanvas;
     [Space]
     [SerializeField] private GameObject DeckErrorText;
+    [Space]
+    [SerializeField] private AudioSource audioSource;
     private void Awake()
     {
         instance = this;
@@ -46,7 +48,8 @@ public class GuıController : MonoBehaviour
     }
     public void PlayButton()
     {
-        if(DeckControllCanvas.GetComponent<DeckMakerController>().isApply)
+        ClickSFX();
+        if (DeckControllCanvas.GetComponent<DeckMakerController>().isApply)
         {
             Animator playAnimator = PlayButtonObject.GetComponent<Animator>();
             playAnimator.SetTrigger("Clicked");
@@ -65,23 +68,27 @@ public class GuıController : MonoBehaviour
     }
     public void OptionsButton()
     {
+        ClickSFX();
         Animator playAnimator = OptionsButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         OptionsCanvas.SetActive(true);
     }
     public void ExitButton()
     {
+        ClickSFX();
         Animator playAnimator = ExitButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         Application.Quit();
     }
     public void CloseButton()
     {
+        ClickSFX();
         OptionsCanvas.SetActive(false);
         DeckControllCanvas.SetActive(false);
     }
     public void ApplyButton()
     {
+        ClickSFX();
         Animator playAnimator = ApplyButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         Screen.fullScreen = fullscreenToggle.isOn;
@@ -96,8 +103,14 @@ public class GuıController : MonoBehaviour
         }
         Screen.SetResolution(resolutions[selectedResolutions].Horizontal, resolutions[selectedResolutions].Vertical, fullscreenToggle.isOn);
     }
+
+    public void ClickSFX()
+    {
+        audioSource.Play();
+    }
     public void ResLeftButton()
     {
+        ClickSFX();
         Animator playAnimator = ResLeftButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         selectedResolutions--;
@@ -109,6 +122,7 @@ public class GuıController : MonoBehaviour
     }
     public void ResRightButton()
     {
+        ClickSFX();
         Animator playAnimator = ResRightButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         selectedResolutions++;
@@ -122,16 +136,32 @@ public class GuıController : MonoBehaviour
     {
         resolutionsText.text = resolutions[selectedResolutions].Horizontal.ToString() + " X " +  resolutions[selectedResolutions].Vertical.ToString();
     }
+    public void MasterVolumeSet()
+    {
+        Mixer.SetFloat("MasterVol", MasterVolumeSlider.value);
+    }
+    
     public void MusicVolumeSet()
     {
         Mixer.SetFloat("MusicVol", MusicVolumeSlider.value);
     }
+    public void SFXVolumeSet()
+    {
+        Mixer.SetFloat("SFXVol", SFXVolumeSlider.value);
+    }
 
     public void DeckControlButton()
     {
+        ClickSFX();
         Animator playAnimator = PlayButtonObject.GetComponent<Animator>();
         playAnimator.SetTrigger("Clicked");
         DeckControllCanvas.SetActive(true);
+    }
+
+    public void OpenLinkedIn(string url = "www.linkedin.com/in/erdogancolak")
+    {
+        ClickSFX();
+        Application.OpenURL(url);
     }
 }
 [System.Serializable]

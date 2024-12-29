@@ -21,8 +21,12 @@ public class Card : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text cardNameText;
     public GameObject modelHolder;
+    public Animator effectAnimator;
 
     [HideInInspector] public Animator animator;
+
+    public AudioSource audioSource1;
+    public AudioSource audioSource2;
 
     public bool isPlayer;
 
@@ -87,7 +91,7 @@ public class Card : MonoBehaviour
 
         cardNameText.text = cardName.ToString();
         modelHolder.GetComponent<SpriteRenderer>().sprite = cardSO.modelHolderSprite;
-       
+        effectAnimator.SetBool(cardAbility, true);
     }
 
     public void MoveToPoint(Vector3 pointToMoveTo , Quaternion rotToMatch)
@@ -146,6 +150,7 @@ public class Card : MonoBehaviour
             RaycastHit2D placementHit = Physics2D.Raycast(worldMousePosition, Vector2.zero, 100f, placementLayer);
             if (placementHit && BattleController.instance.currentOrder == BattleController.TurnOrder.playerActive)
             {
+                audioSource2.Play();
                 CardPlacePoint selectedPoint = placementHit.collider.GetComponent<CardPlacePoint>();
                 CardPlacePoint bestFrame = FindBestFrame();
                 if (selectedPoint.activeCard == null && selectedPoint.isPlayerPoint)
@@ -211,6 +216,7 @@ public class Card : MonoBehaviour
 
     public void GetDamage(int damageAmount)
     {
+        audioSource1.Play();
         animator.SetTrigger("CardAttack");
         
         health -= damageAmount;

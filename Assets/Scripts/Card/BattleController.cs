@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour
@@ -86,9 +87,18 @@ public class BattleController : MonoBehaviour
                 break;
             case TurnOrder.allCardAttack:
                 turnCount = -1;
-                CardPointsController.instance.CardsAttack();
+                StartCoroutine(AttackStartIE());
                 break;
         }
+    }
+    IEnumerator AttackStartIE()
+    {
+        AudioSource audiosource = GetComponent<AudioSource>();
+        DeckController.instance.AudioSource.Stop();
+        audiosource.Play();
+        yield return new WaitForSeconds(2f);
+        DeckController.instance.AudioSource.Play();
+        CardPointsController.instance.CardsAttack();
     }
 
     

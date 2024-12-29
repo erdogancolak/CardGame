@@ -72,18 +72,6 @@ public class DeckMakerController : MonoBehaviour
     #region Nature
     public void NatureAdd()
     {
-        //if(selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = natureSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Nature";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = natureSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Nature";
-        //}
         if(canAdd)
         {
             natureCount++;
@@ -92,46 +80,24 @@ public class DeckMakerController : MonoBehaviour
                 natureCount = maxCardPerTheme;
             }
             natureCountText.text = (natureCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void NatureRemove()
     {
-        //if(selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = natureSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Nature";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = natureSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Nature";
-        //}
         natureCount--;
         if (natureCount < 0)
         {
             natureCount = 0;
         }
         natureCountText.text = (natureCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Lightning
     public void LightningAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = LightningSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Lightning";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = LightningSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Lightning";
-        //}
         if(canAdd)
         {
             lightningCount++;
@@ -140,46 +106,24 @@ public class DeckMakerController : MonoBehaviour
                 lightningCount = maxCardPerTheme;
             }
             lightningCountText.text = (lightningCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void LightningRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = LightningSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Lightning";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = LightningSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Lightning";
-        //}
         lightningCount--;
         if(lightningCount < 0)
         {
             lightningCount = 0;
         }
         lightningCountText.text = (lightningCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Fire
     public void FireAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = FireSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Fire";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = FireSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Fire";
-        //}
         if(canAdd)
         {
             fireCount++;
@@ -188,46 +132,24 @@ public class DeckMakerController : MonoBehaviour
                 fireCount = maxCardPerTheme;
             }
             fireCountText.text = (fireCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void FireRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = FireSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Fire";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = FireSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Fire";
-        //}
         fireCount--;
         if(fireCount < 0)
         {
             fireCount = 0;
         }
         fireCountText.text = (fireCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Ice
     public void IceAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = IceSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ice";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = IceSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ice";
-        //}
         if(canAdd)
         {
             iceCount++;
@@ -236,46 +158,24 @@ public class DeckMakerController : MonoBehaviour
                 iceCount = maxCardPerTheme;
             }
             iceCountText.text = (iceCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void IceRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = IceSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ice";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = IceSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ice";
-        //}
         iceCount--;
         if(iceCount < 0)
         {
             iceCount = 0;
         }
         iceCountText.text = (iceCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Crown
     public void CrownAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = CrownSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Crown";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = CrownSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Crown";
-        //}
         if(canAdd)
         {
             crownCount++;
@@ -284,46 +184,24 @@ public class DeckMakerController : MonoBehaviour
                 crownCount = maxCardPerTheme;
             }
             crownCountText.text = (crownCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void CrownRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = CrownSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Crown";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = CrownSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Crown";
-        //}
         crownCount--;
         if(crownCount < 0)
         {
             crownCount = 0;
         }
         crownCountText.text = (crownCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Mage
     public void MageAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = MageSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Mage";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = MageSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Mage";
-        //}
         if(canAdd)
         {
             mageCount++;
@@ -332,46 +210,24 @@ public class DeckMakerController : MonoBehaviour
                 mageCount = maxCardPerTheme;
             }
             mageCountText.text = (mageCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void MageRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = MageSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Mage";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = MageSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Mage";
-        //}
         mageCount--;
         if(mageCount < 0)
         {
             mageCount = 0;
         }
         mageCountText.text = (mageCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Ocean
     public void OceanAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = OceanSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ocean";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = OceanSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ocean";
-        //}
         if(canAdd)
         {
             oceanCount++;
@@ -380,46 +236,24 @@ public class DeckMakerController : MonoBehaviour
                 oceanCount = maxCardPerTheme;
             }
             oceanCountText.text = (oceanCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void OceanRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = OceanSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ocean";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = OceanSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ocean";
-        //}
         oceanCount--;
         if (oceanCount < 0)
         {
             oceanCount = 0;
         }
         oceanCountText.text = (oceanCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion
     #region Ghost
     public void GhostAdd()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = GhostSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ghost";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = GhostSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ghost";
-        //}
         if(canAdd)
         {
             ghostCount++;
@@ -428,28 +262,18 @@ public class DeckMakerController : MonoBehaviour
                 ghostCount = maxCardPerTheme;
             }
             ghostCountText.text = (ghostCount.ToString() + " X");
+            GuýController.instance.ClickSFX();
         }
     }
     public void GhostRemove()
     {
-        //if (selectedFrameIndex == 0)
-        //{
-        //    SelectedFrames[0].sprite = GhostSprite;
-        //    selectedFrameIndex = 1;
-        //    SelectedDeck1 = "Ghost";
-        //}
-        //else if (selectedFrameIndex == 1)
-        //{
-        //    SelectedFrames[1].sprite = GhostSprite;
-        //    selectedFrameIndex = 0;
-        //    SelectedDeck2 = "Ghost";
-        //}
         ghostCount--;
         if(ghostCount < 0)
         {
             ghostCount = 0;
         }
         ghostCountText.text = (ghostCount.ToString() + " X");
+        GuýController.instance.ClickSFX();
         ResetAllTheme();
     }
     #endregion

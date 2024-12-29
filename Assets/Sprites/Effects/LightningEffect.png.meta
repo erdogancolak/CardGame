@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 65562a54f1ad90d41a3e2fa38c837a1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6074101342684331356
+    second: Thunderstrike wo blur_0
+  - first:
+      213: 8417347753393346885
+    second: Thunderstrike wo blur_1
+  - first:
+      213: 5961485924979949580
+    second: Thunderstrike wo blur_2
+  - first:
+      213: 5907979361309522680
+    second: Thunderstrike wo blur_3
+  - first:
+      213: -4866075604718878935
+    second: Thunderstrike wo blur_4
+  - first:
+      213: 239595700088951295
+    second: Thunderstrike wo blur_5
+  - first:
+      213: -8601624698901724777
+    second: Thunderstrike wo blur_6
+  - first:
+      213: 2624603078568911602
+    second: Thunderstrike wo blur_7
+  - first:
+      213: 8118787230259140300
+    second: Thunderstrike wo blur_8
+  - first:
+      213: 3492372473252588672
+    second: Thunderstrike wo blur_9
+  - first:
+      213: 1423994329279506595
+    second: Thunderstrike wo blur_10
+  - first:
+      213: 466508037275500464
+    second: Thunderstrike wo blur_11
+  - first:
+      213: -1656614021225295966
+    second: Thunderstrike wo blur_12
+  - first:
+      213: -6234456754127234705
+    second: Thunderstrike wo blur_13
+  - first:
+      213: 6910933744047258618
+    second: Thunderstrike wo blur_14
+  - first:
+      213: -8577802314417057375
+    second: Thunderstrike wo blur_15
+  - first:
+      213: 588684607965373446
+    second: Thunderstrike wo blur_16
+  - first:
+      213: 1902334469092161687
+    second: Thunderstrike wo blur_17
+  - first:
+      213: 5525656510108792475
+    second: Thunderstrike wo blur_18
+  - first:
+      213: -8283862007935360254
+    second: Thunderstrike wo blur_19
+  - first:
+      213: -2925526674327873778
+    second: Thunderstrike wo blur_20
+  - first:
+      213: 7804615232074382688
+    second: Thunderstrike wo blur_21
+  - first:
+      213: 8231111634330788412
+    second: Thunderstrike wo blur_22
+  - first:
+      213: 6392728723191460156
+    second: Thunderstrike wo blur_23
+  - first:
+      213: 1166577137200938246
+    second: Thunderstrike wo blur_24
+  - first:
+      213: 5256570649008527539
+    second: Thunderstrike wo blur_25
+  - first:
+      213: 8971175708776679187
+    second: Thunderstrike wo blur_26
+  - first:
+      213: 4364539471554888210
+    second: Thunderstrike wo blur_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff153811507335300800000000000000
+      internalID: 239595700088951295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_6
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5857d9cee96cf4b429c631cd8818fdd9
+      internalID: -8601624698901724777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_7
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2c5db3ed8d43e4589f4638ab18f2b5
+      internalID: 2624603078568911602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab99c8a54b9631d419ef1dd6017b62bf
+      internalID: 3492372473252588672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_10
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a6987b774bcdf4d94b7c795f8bc54c
+      internalID: 1111010157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 58
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d74919fc8eacd439823f3451e13d57
+      internalID: 1130735283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thunderstrike wo blur_12
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 55
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad00c3e0161efd44b84a8178e36465ce
+      internalID: 1648269330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b9225057dd79a5f4f9f5aa5df0883281
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Thunderstrike wo blur_0: -6074101342684331356
+      Thunderstrike wo blur_1: 8417347753393346885
+      Thunderstrike wo blur_10: 1111010157
+      Thunderstrike wo blur_11: 1130735283
+      Thunderstrike wo blur_12: 1648269330
+      Thunderstrike wo blur_13: 1066544514
+      Thunderstrike wo blur_14: -1424940025
+      Thunderstrike wo blur_2: 5961485924979949580
+      Thunderstrike wo blur_3: 5907979361309522680
+      Thunderstrike wo blur_4: -4866075604718878935
+      Thunderstrike wo blur_5: 239595700088951295
+      Thunderstrike wo blur_6: -8601624698901724777
+      Thunderstrike wo blur_7: 2624603078568911602
+      Thunderstrike wo blur_8: 1930545009
+      Thunderstrike wo blur_9: 3492372473252588672
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

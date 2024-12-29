@@ -11,6 +11,8 @@ public class TowerHealthController : MonoBehaviour
     public int maxEnemyTowerHealth;
     public TMP_Text playerHealthText;
     public TMP_Text enemyHealthText;
+
+    private AudioSource attackTowerAudioSource;
     private void Awake()
     {
         instance = this;
@@ -19,6 +21,7 @@ public class TowerHealthController : MonoBehaviour
     {
         playerHealth = maxPlayerTowerHealth;
         enemyHealth = maxEnemyTowerHealth;
+        attackTowerAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,6 +31,7 @@ public class TowerHealthController : MonoBehaviour
 
     public void ChangePlayerTowerHealth(int damageAmount)
     {
+        attackTowerAudioSource.Play();
         playerHealth -= damageAmount;
 
         if(playerHealth < 0)
@@ -42,6 +46,7 @@ public class TowerHealthController : MonoBehaviour
     }
     public void ChangeEnemyTowerHealth(int damageAmount)
     {
+        attackTowerAudioSource.Play();
         enemyHealth -= damageAmount;
 
         if(enemyHealth < 0)

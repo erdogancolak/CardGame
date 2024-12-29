@@ -11,6 +11,8 @@ public class DeckController : MonoBehaviour
     
     public Card cardToSpawn;
 
+    public AudioSource AudioSource;
+
     private void Awake()
     {
         instance = this;
@@ -18,15 +20,13 @@ public class DeckController : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        AudioSource = GetComponent<AudioSource>();
         SetupDeck();
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            DrawCardToHand();
-        }
+       
     }
     public void SetupDeck()
     {
@@ -49,6 +49,7 @@ public class DeckController : MonoBehaviour
         {
             SetupDeck();
         }
+        AudioSource.Play();
 
         Card newCard = Instantiate(cardToSpawn, transform.position, transform.rotation);
         newCard.cardSO = activeCards[0];
