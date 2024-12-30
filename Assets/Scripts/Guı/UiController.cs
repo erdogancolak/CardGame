@@ -43,6 +43,8 @@ public class UiController : MonoBehaviour
 
     public void ShowManaWarning()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         manaWarning.SetActive(true);
         manaWarningCounter = manaWarningTime;
     }

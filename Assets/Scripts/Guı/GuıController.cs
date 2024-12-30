@@ -37,6 +37,7 @@ public class GuıController : MonoBehaviour
     [SerializeField] private GameObject DeckErrorText;
     [Space]
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource2;
     private void Awake()
     {
         instance = this;
@@ -57,6 +58,7 @@ public class GuıController : MonoBehaviour
         }
         else
         {
+            audioSource2.Play();    
             DeckErrorText.SetActive(true);
             StartCoroutine(deckErrorIE());
         }

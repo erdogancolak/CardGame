@@ -328,6 +328,8 @@ public class DeckMakerController : MonoBehaviour
         }
         else
         {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.Play();             
             applyError.SetActive(true);
             StartCoroutine(applyErrorClose());
         }
